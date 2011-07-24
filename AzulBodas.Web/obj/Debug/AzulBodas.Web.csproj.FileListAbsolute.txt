@@ -1,0 +1,7 @@
+c:\Projects\AzulBodas\AzulBodas.Web\bin\AzulBodas.Web.dll
+c:\Projects\AzulBodas\AzulBodas.Web\bin\AzulBodas.Web.pdb
+c:\Projects\AzulBodas\AzulBodas.Web\obj\Debug\ResolveAssemblyReference.cache
+c:\Projects\AzulBodas\AzulBodas.Web\obj\Debug\AzulBodas.Web.dll
+c:\Projects\AzulBodas\AzulBodas.Web\obj\Debug\AzulBodas.Web.pdb
+c:\Projects\AzulBodas\AzulBodas.Web\bin\AzulBodas.Data.dll
+c:\Projects\AzulBodas\AzulBodas.Web\bin\AzulBodas.Data.pdb

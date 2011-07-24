@@ -1,0 +1,60 @@
+﻿<%@ Master Language="C#" Inherits="AzulBodas.Web.Helpers.AzulBodasMasterPage" %>
+
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+<head runat="server">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="<asp:ContentPlaceHolder ID="MetaDescription" runat="server" />">
+    <meta name="author" content="<asp:ContentPlaceHolder ID="MetaAuthor" runat="server" />">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
+    <link href="<%= Url.Content("~/Content/Site.css") %>" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="logo">
+            <a href='<%= Url.Action("Index", "Home") %>'>
+                <img src='<%= Url.Content("~/Content/images/logo.png") %>' alt="logo" width="207px" height="119px" />
+            </a>
+        </div>
+        <div id="nav">
+            <div id="nav-top"></div>
+            <div id="nav-lnks">
+                <% Html.RenderPartial("WebsiteNavigation", ActivePage); %>
+            </div>
+            <div id="nav-bottom"></div>
+        </div>
+        <div id="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        </div>
+        <div id="footer">
+            <ul>
+                <li class="first"><a class="sprite-facebook" href="#">Facebook</a></li>
+                <li><a class="sprite-twitter" href="#">Twitter</a></li>
+            </ul>
+        </div>
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write("<script src='<%= Url.Content("~/Scripts/jquery-1.6.1-min.js") %>'>\x3C/script>")</script>
+    <script type="text/javascript" src='<%= Url.Content("~/Scripts/plugins-min.js") %>'></script>
+    <!--[if lt IE 7 ]>
+    <script src="<%= Url.Content("~/Scripts/dd_belatedpng.js") %>"></script>
+    <script>DD_belatedPNG.fix("img, .png_bg");</script>
+    <![endif]-->
+
+    <script>
+        var _gaq = [["_setAccount", "UA-XXXXX-X"], ["_trackPageview"]];
+        (function (d, t) {
+            var g = d.createElement(t), s = d.getElementsByTagName(t)[0]; g.async = 1;
+            g.src = ("https:" == location.protocol ? "//ssl" : "//www") + ".google-analytics.com/ga.js";
+            s.parentNode.insertBefore(g, s)
+        } (document, "script"));
+  </script>
+</body>
+</html>
