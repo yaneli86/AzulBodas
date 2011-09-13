@@ -45,7 +45,7 @@
         var elems = this;
         $(window).load(function() {
                 return elems.each(function () {
-                    $(this).slides({
+                    $(this).show().slides({
                         preload: false,
                         preloadImage: webroot + 'images/loading.gif',
                         play: 5000,
@@ -55,7 +55,7 @@
                         animationStart: function (current) {},
                         animationComplete: function (current) {},
                         slidesLoaded: function () {}
-                    }); 
+                    });
                 });
             }
         );

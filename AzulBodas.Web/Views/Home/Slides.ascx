@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<AzulBodas.Web.Models.SlidesModel>" %>
-<div id="slides" style="width:<%= Model.Width %>px">
+<div id="slides" style="width:<%= Model.Width %>px;display:none">
 	<div class="slides_container">
         <% foreach(String filename in Model.Images){ %>
         <div class="slide">
