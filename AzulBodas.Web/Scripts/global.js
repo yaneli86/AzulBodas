@@ -42,18 +42,22 @@
 
 (function ($) {
     $.fn.abSlides = function () {
-        return this.each(function () {
-            $(this).slides({
-                preload: false,
-                preloadImage: webroot + 'images/loading.gif',
-                play: 5000,
-                pause: 2500,
-                hoverPause: true,
-                bigTarget: true,
-                animationStart: function (current) {},
-                animationComplete: function (current) {},
-                slidesLoaded: function () {}
-            }); 
-        });
+        var elems = this;
+        $(window).load(function() {
+                return elems.each(function () {
+                    $(this).slides({
+                        preload: false,
+                        preloadImage: webroot + 'images/loading.gif',
+                        play: 5000,
+                        pause: 2500,
+                        hoverPause: true,
+                        bigTarget: true,
+                        animationStart: function (current) {},
+                        animationComplete: function (current) {},
+                        slidesLoaded: function () {}
+                    }); 
+                });
+            }
+        );
     }
 })(jQuery);

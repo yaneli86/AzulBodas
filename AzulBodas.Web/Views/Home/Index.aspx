@@ -12,7 +12,7 @@
 	<script type="text/javascript" src="<%= Url.Content("~/Scripts/slides.min.jquery.js") %>"></script>
     <script type="text/javascript">
         $(function () {
-            $('#slides').abSlides()
+            $('#slides').abSlides();
         });
 </script>
 </asp:Content>
