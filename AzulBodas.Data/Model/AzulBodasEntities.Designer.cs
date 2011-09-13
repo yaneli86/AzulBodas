@@ -16,6 +16,13 @@ using System.Xml.Serialization;
 using System.Runtime.Serialization;
 
 [assembly: EdmSchemaAttribute()]
+#region EDM Relationship Metadata
+
+[assembly: EdmRelationshipAttribute("AzulBodasModel", "FK_PageMedia_Page", "Medium", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(AzulBodas.Data.Model.Media), "PageMedia", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(AzulBodas.Data.Model.PageMedia), true)]
+[assembly: EdmRelationshipAttribute("AzulBodasModel", "FK_PageMedia_Page1", "Page", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(AzulBodas.Data.Model.Page), "PageMedia", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(AzulBodas.Data.Model.PageMedia), true)]
+[assembly: EdmRelationshipAttribute("AzulBodasModel", "FK_Text_Page", "Page", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(AzulBodas.Data.Model.Page), "Text", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(AzulBodas.Data.Model.Text), true)]
+
+#endregion
 
 namespace AzulBodas.Data.Model
 {
@@ -68,6 +75,70 @@ namespace AzulBodas.Data.Model
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
+        public ObjectSet<Media> Media1
+        {
+            get
+            {
+                if ((_Media1 == null))
+                {
+                    _Media1 = base.CreateObjectSet<Media>("Media1");
+                }
+                return _Media1;
+            }
+        }
+        private ObjectSet<Media> _Media1;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<Page> Pages
+        {
+            get
+            {
+                if ((_Pages == null))
+                {
+                    _Pages = base.CreateObjectSet<Page>("Pages");
+                }
+                return _Pages;
+            }
+        }
+        private ObjectSet<Page> _Pages;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<PageMedia> PageMedias
+        {
+            get
+            {
+                if ((_PageMedias == null))
+                {
+                    _PageMedias = base.CreateObjectSet<PageMedia>("PageMedias");
+                }
+                return _PageMedias;
+            }
+        }
+        private ObjectSet<PageMedia> _PageMedias;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<StaticText> StaticTexts
+        {
+            get
+            {
+                if ((_StaticTexts == null))
+                {
+                    _StaticTexts = base.CreateObjectSet<StaticText>("StaticTexts");
+                }
+                return _StaticTexts;
+            }
+        }
+        private ObjectSet<StaticText> _StaticTexts;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
         public ObjectSet<Text> Texts
         {
             get
@@ -83,6 +154,38 @@ namespace AzulBodas.Data.Model
 
         #endregion
         #region AddTo Methods
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the Media1 EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToMedia1(Media media)
+        {
+            base.AddObject("Media1", media);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the Pages EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToPages(Page page)
+        {
+            base.AddObject("Pages", page);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the PageMedias EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToPageMedias(PageMedia pageMedia)
+        {
+            base.AddObject("PageMedias", pageMedia);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the StaticTexts EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToStaticTexts(StaticText staticText)
+        {
+            base.AddObject("StaticTexts", staticText);
+        }
     
         /// <summary>
         /// Deprecated Method for adding a new object to the Texts EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
@@ -103,22 +206,254 @@ namespace AzulBodas.Data.Model
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="AzulBodasModel", Name="Text")]
+    [EdmEntityTypeAttribute(NamespaceName="AzulBodasModel", Name="Media")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class Text : EntityObject
+    public partial class Media : EntityObject
     {
         #region Factory Method
     
         /// <summary>
-        /// Create a new Text object.
+        /// Create a new Media object.
         /// </summary>
         /// <param name="id">Initial value of the Id property.</param>
-        public static Text CreateText(global::System.Int32 id)
+        /// <param name="contentData">Initial value of the ContentData property.</param>
+        /// <param name="width">Initial value of the Width property.</param>
+        /// <param name="height">Initial value of the Height property.</param>
+        /// <param name="thumbnailContentData">Initial value of the ThumbnailContentData property.</param>
+        public static Media CreateMedia(global::System.Int32 id, global::System.Byte[] contentData, global::System.Int32 width, global::System.Int32 height, global::System.Byte[] thumbnailContentData)
         {
-            Text text = new Text();
-            text.Id = id;
-            return text;
+            Media media = new Media();
+            media.Id = id;
+            media.ContentData = contentData;
+            media.Width = width;
+            media.Height = height;
+            media.ThumbnailContentData = thumbnailContentData;
+            return media;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Byte[] ContentData
+        {
+            get
+            {
+                return StructuralObject.GetValidValue(_ContentData);
+            }
+            set
+            {
+                OnContentDataChanging(value);
+                ReportPropertyChanging("ContentData");
+                _ContentData = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("ContentData");
+                OnContentDataChanged();
+            }
+        }
+        private global::System.Byte[] _ContentData;
+        partial void OnContentDataChanging(global::System.Byte[] value);
+        partial void OnContentDataChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String AltTag
+        {
+            get
+            {
+                return _AltTag;
+            }
+            set
+            {
+                OnAltTagChanging(value);
+                ReportPropertyChanging("AltTag");
+                _AltTag = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("AltTag");
+                OnAltTagChanged();
+            }
+        }
+        private global::System.String _AltTag;
+        partial void OnAltTagChanging(global::System.String value);
+        partial void OnAltTagChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Title
+        {
+            get
+            {
+                return _Title;
+            }
+            set
+            {
+                OnTitleChanging(value);
+                ReportPropertyChanging("Title");
+                _Title = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Title");
+                OnTitleChanged();
+            }
+        }
+        private global::System.String _Title;
+        partial void OnTitleChanging(global::System.String value);
+        partial void OnTitleChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Width
+        {
+            get
+            {
+                return _Width;
+            }
+            set
+            {
+                OnWidthChanging(value);
+                ReportPropertyChanging("Width");
+                _Width = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Width");
+                OnWidthChanged();
+            }
+        }
+        private global::System.Int32 _Width;
+        partial void OnWidthChanging(global::System.Int32 value);
+        partial void OnWidthChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Height
+        {
+            get
+            {
+                return _Height;
+            }
+            set
+            {
+                OnHeightChanging(value);
+                ReportPropertyChanging("Height");
+                _Height = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Height");
+                OnHeightChanged();
+            }
+        }
+        private global::System.Int32 _Height;
+        partial void OnHeightChanging(global::System.Int32 value);
+        partial void OnHeightChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Byte[] ThumbnailContentData
+        {
+            get
+            {
+                return StructuralObject.GetValidValue(_ThumbnailContentData);
+            }
+            set
+            {
+                OnThumbnailContentDataChanging(value);
+                ReportPropertyChanging("ThumbnailContentData");
+                _ThumbnailContentData = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("ThumbnailContentData");
+                OnThumbnailContentDataChanged();
+            }
+        }
+        private global::System.Byte[] _ThumbnailContentData;
+        partial void OnThumbnailContentDataChanging(global::System.Byte[] value);
+        partial void OnThumbnailContentDataChanged();
+
+        #endregion
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("AzulBodasModel", "FK_PageMedia_Page", "PageMedia")]
+        public EntityCollection<PageMedia> PageMedias
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<PageMedia>("AzulBodasModel.FK_PageMedia_Page", "PageMedia");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<PageMedia>("AzulBodasModel.FK_PageMedia_Page", "PageMedia", value);
+                }
+            }
+        }
+
+        #endregion
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="AzulBodasModel", Name="Page")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class Page : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new Page object.
+        /// </summary>
+        /// <param name="id">Initial value of the Id property.</param>
+        public static Page CreatePage(global::System.Int32 id)
+        {
+            Page page = new Page();
+            page.Id = id;
+            return page;
         }
 
         #endregion
@@ -156,51 +491,637 @@ namespace AzulBodas.Data.Model
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.String DescriptionSpanish
+        public global::System.String Name
         {
             get
             {
-                return _DescriptionSpanish;
+                return _Name;
             }
             set
             {
-                OnDescriptionSpanishChanging(value);
-                ReportPropertyChanging("DescriptionSpanish");
-                _DescriptionSpanish = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("DescriptionSpanish");
-                OnDescriptionSpanishChanged();
+                OnNameChanging(value);
+                ReportPropertyChanging("Name");
+                _Name = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Name");
+                OnNameChanged();
             }
         }
-        private global::System.String _DescriptionSpanish;
-        partial void OnDescriptionSpanishChanging(global::System.String value);
-        partial void OnDescriptionSpanishChanged();
+        private global::System.String _Name;
+        partial void OnNameChanging(global::System.String value);
+        partial void OnNameChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.String DescriptionEnglish
+        public global::System.String Title
         {
             get
             {
-                return _DescriptionEnglish;
+                return _Title;
             }
             set
             {
-                OnDescriptionEnglishChanging(value);
-                ReportPropertyChanging("DescriptionEnglish");
-                _DescriptionEnglish = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("DescriptionEnglish");
-                OnDescriptionEnglishChanged();
+                OnTitleChanging(value);
+                ReportPropertyChanging("Title");
+                _Title = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Title");
+                OnTitleChanged();
             }
         }
-        private global::System.String _DescriptionEnglish;
-        partial void OnDescriptionEnglishChanging(global::System.String value);
-        partial void OnDescriptionEnglishChanged();
+        private global::System.String _Title;
+        partial void OnTitleChanging(global::System.String value);
+        partial void OnTitleChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Description
+        {
+            get
+            {
+                return _Description;
+            }
+            set
+            {
+                OnDescriptionChanging(value);
+                ReportPropertyChanging("Description");
+                _Description = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Description");
+                OnDescriptionChanged();
+            }
+        }
+        private global::System.String _Description;
+        partial void OnDescriptionChanging(global::System.String value);
+        partial void OnDescriptionChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String Keywords
+        {
+            get
+            {
+                return _Keywords;
+            }
+            set
+            {
+                OnKeywordsChanging(value);
+                ReportPropertyChanging("Keywords");
+                _Keywords = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Keywords");
+                OnKeywordsChanged();
+            }
+        }
+        private global::System.String _Keywords;
+        partial void OnKeywordsChanging(global::System.String value);
+        partial void OnKeywordsChanged();
 
         #endregion
     
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("AzulBodasModel", "FK_PageMedia_Page1", "PageMedia")]
+        public EntityCollection<PageMedia> PageMedias
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<PageMedia>("AzulBodasModel.FK_PageMedia_Page1", "PageMedia");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<PageMedia>("AzulBodasModel.FK_PageMedia_Page1", "PageMedia", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("AzulBodasModel", "FK_Text_Page", "Text")]
+        public EntityCollection<Text> Texts
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Text>("AzulBodasModel.FK_Text_Page", "Text");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Text>("AzulBodasModel.FK_Text_Page", "Text", value);
+                }
+            }
+        }
+
+        #endregion
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="AzulBodasModel", Name="PageMedia")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class PageMedia : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new PageMedia object.
+        /// </summary>
+        /// <param name="pageId">Initial value of the PageId property.</param>
+        /// <param name="mediaId">Initial value of the MediaId property.</param>
+        /// <param name="order">Initial value of the Order property.</param>
+        public static PageMedia CreatePageMedia(global::System.Int32 pageId, global::System.Int32 mediaId, global::System.Int32 order)
+        {
+            PageMedia pageMedia = new PageMedia();
+            pageMedia.PageId = pageId;
+            pageMedia.MediaId = mediaId;
+            pageMedia.Order = order;
+            return pageMedia;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 PageId
+        {
+            get
+            {
+                return _PageId;
+            }
+            set
+            {
+                if (_PageId != value)
+                {
+                    OnPageIdChanging(value);
+                    ReportPropertyChanging("PageId");
+                    _PageId = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("PageId");
+                    OnPageIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _PageId;
+        partial void OnPageIdChanging(global::System.Int32 value);
+        partial void OnPageIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 MediaId
+        {
+            get
+            {
+                return _MediaId;
+            }
+            set
+            {
+                if (_MediaId != value)
+                {
+                    OnMediaIdChanging(value);
+                    ReportPropertyChanging("MediaId");
+                    _MediaId = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("MediaId");
+                    OnMediaIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _MediaId;
+        partial void OnMediaIdChanging(global::System.Int32 value);
+        partial void OnMediaIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Order
+        {
+            get
+            {
+                return _Order;
+            }
+            set
+            {
+                if (_Order != value)
+                {
+                    OnOrderChanging(value);
+                    ReportPropertyChanging("Order");
+                    _Order = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Order");
+                    OnOrderChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Order;
+        partial void OnOrderChanging(global::System.Int32 value);
+        partial void OnOrderChanged();
+
+        #endregion
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("AzulBodasModel", "FK_PageMedia_Page", "Medium")]
+        public Media Medium
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Media>("AzulBodasModel.FK_PageMedia_Page", "Medium").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Media>("AzulBodasModel.FK_PageMedia_Page", "Medium").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Media> MediumReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Media>("AzulBodasModel.FK_PageMedia_Page", "Medium");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Media>("AzulBodasModel.FK_PageMedia_Page", "Medium", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("AzulBodasModel", "FK_PageMedia_Page1", "Page")]
+        public Page Page
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Page>("AzulBodasModel.FK_PageMedia_Page1", "Page").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Page>("AzulBodasModel.FK_PageMedia_Page1", "Page").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Page> PageReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Page>("AzulBodasModel.FK_PageMedia_Page1", "Page");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Page>("AzulBodasModel.FK_PageMedia_Page1", "Page", value);
+                }
+            }
+        }
+
+        #endregion
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="AzulBodasModel", Name="StaticText")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class StaticText : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new StaticText object.
+        /// </summary>
+        /// <param name="id">Initial value of the Id property.</param>
+        /// <param name="phrase">Initial value of the Phrase property.</param>
+        public static StaticText CreateStaticText(global::System.Int32 id, global::System.String phrase)
+        {
+            StaticText staticText = new StaticText();
+            staticText.Id = id;
+            staticText.Phrase = phrase;
+            return staticText;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String Phrase
+        {
+            get
+            {
+                return _Phrase;
+            }
+            set
+            {
+                OnPhraseChanging(value);
+                ReportPropertyChanging("Phrase");
+                _Phrase = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Phrase");
+                OnPhraseChanged();
+            }
+        }
+        private global::System.String _Phrase;
+        partial void OnPhraseChanging(global::System.String value);
+        partial void OnPhraseChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String ValueSpanish
+        {
+            get
+            {
+                return _ValueSpanish;
+            }
+            set
+            {
+                OnValueSpanishChanging(value);
+                ReportPropertyChanging("ValueSpanish");
+                _ValueSpanish = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("ValueSpanish");
+                OnValueSpanishChanged();
+            }
+        }
+        private global::System.String _ValueSpanish;
+        partial void OnValueSpanishChanging(global::System.String value);
+        partial void OnValueSpanishChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String ValueEnglish
+        {
+            get
+            {
+                return _ValueEnglish;
+            }
+            set
+            {
+                OnValueEnglishChanging(value);
+                ReportPropertyChanging("ValueEnglish");
+                _ValueEnglish = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("ValueEnglish");
+                OnValueEnglishChanged();
+            }
+        }
+        private global::System.String _ValueEnglish;
+        partial void OnValueEnglishChanging(global::System.String value);
+        partial void OnValueEnglishChanged();
+
+        #endregion
+    
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="AzulBodasModel", Name="Text")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class Text : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new Text object.
+        /// </summary>
+        /// <param name="id">Initial value of the Id property.</param>
+        /// <param name="valueEs">Initial value of the ValueEs property.</param>
+        public static Text CreateText(global::System.Int32 id, global::System.String valueEs)
+        {
+            Text text = new Text();
+            text.Id = id;
+            text.ValueEs = valueEs;
+            return text;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String ValueEs
+        {
+            get
+            {
+                return _ValueEs;
+            }
+            set
+            {
+                OnValueEsChanging(value);
+                ReportPropertyChanging("ValueEs");
+                _ValueEs = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("ValueEs");
+                OnValueEsChanged();
+            }
+        }
+        private global::System.String _ValueEs;
+        partial void OnValueEsChanging(global::System.String value);
+        partial void OnValueEsChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String ValueEn
+        {
+            get
+            {
+                return _ValueEn;
+            }
+            set
+            {
+                OnValueEnChanging(value);
+                ReportPropertyChanging("ValueEn");
+                _ValueEn = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("ValueEn");
+                OnValueEnChanged();
+            }
+        }
+        private global::System.String _ValueEn;
+        partial void OnValueEnChanging(global::System.String value);
+        partial void OnValueEnChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> PageId
+        {
+            get
+            {
+                return _PageId;
+            }
+            set
+            {
+                OnPageIdChanging(value);
+                ReportPropertyChanging("PageId");
+                _PageId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("PageId");
+                OnPageIdChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _PageId;
+        partial void OnPageIdChanging(Nullable<global::System.Int32> value);
+        partial void OnPageIdChanged();
+
+        #endregion
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("AzulBodasModel", "FK_Text_Page", "Page")]
+        public Page Page
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Page>("AzulBodasModel.FK_Text_Page", "Page").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Page>("AzulBodasModel.FK_Text_Page", "Page").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<Page> PageReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Page>("AzulBodasModel.FK_Text_Page", "Page");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Page>("AzulBodasModel.FK_Text_Page", "Page", value);
+                }
+            }
+        }
+
+        #endregion
     }
 
     #endregion

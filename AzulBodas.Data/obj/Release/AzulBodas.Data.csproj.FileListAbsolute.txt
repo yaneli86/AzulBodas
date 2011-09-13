@@ -1,0 +1,6 @@
+C:\Projects\AzulBodas\AzulBodas.Data\bin\Release\AzulBodas.Data.dll.config
+C:\Projects\AzulBodas\AzulBodas.Data\bin\Release\AzulBodas.Data.dll
+C:\Projects\AzulBodas\AzulBodas.Data\bin\Release\AzulBodas.Data.pdb
+C:\Projects\AzulBodas\AzulBodas.Data\obj\Release\ResolveAssemblyReference.cache
+C:\Projects\AzulBodas\AzulBodas.Data\obj\Release\AzulBodas.Data.dll
+C:\Projects\AzulBodas\AzulBodas.Data\obj\Release\AzulBodas.Data.pdb

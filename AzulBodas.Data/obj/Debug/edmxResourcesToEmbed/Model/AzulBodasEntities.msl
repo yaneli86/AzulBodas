@@ -1,14 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="AzulBodasModelStoreContainer" CdmEntityContainer="AzulBodasEntities">
-    <EntitySetMapping Name="Texts">
-      <EntityTypeMapping TypeName="AzulBodasModel.Text">
-        <MappingFragment StoreEntitySet="Text">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="DescriptionSpanish" ColumnName="DescriptionSpanish" />
-          <ScalarProperty Name="DescriptionEnglish" ColumnName="DescriptionEnglish" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-  </EntityContainerMapping>
+  <EntityContainerMapping StorageEntityContainer="AzulBodasModelStoreContainer" CdmEntityContainer="AzulBodasEntities" />
 </Mapping>

@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AzulBodasModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="AzulBodasEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Media1" EntityType="AzulBodasModel.Media" />
+    <EntitySet Name="Pages" EntityType="AzulBodasModel.Page" />
+    <EntitySet Name="PageMedias" EntityType="AzulBodasModel.PageMedia" />
+    <EntitySet Name="StaticTexts" EntityType="AzulBodasModel.StaticText" />
+    <EntitySet Name="Texts" EntityType="AzulBodasModel.Text" />
+    <AssociationSet Name="FK_PageMedia_Page" Association="AzulBodasModel.FK_PageMedia_Page">
+      <End Role="Medium" EntitySet="Media1" />
+      <End Role="PageMedia" EntitySet="PageMedias" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PageMedia_Page1" Association="AzulBodasModel.FK_PageMedia_Page1">
+      <End Role="Page" EntitySet="Pages" />
+      <End Role="PageMedia" EntitySet="PageMedias" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Text_Page" Association="AzulBodasModel.FK_Text_Page">
+      <End Role="Page" EntitySet="Pages" />
+      <End Role="Text" EntitySet="Texts" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Media">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Binary" Name="ContentData" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Type="String" Name="AltTag" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Title" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Width" Nullable="false" />
+    <Property Type="Int32" Name="Height" Nullable="false" />
+    <Property Type="Binary" Name="ThumbnailContentData" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="PageMedias" Relationship="AzulBodasModel.FK_PageMedia_Page" FromRole="Medium" ToRole="PageMedia" />
+  </EntityType>
+  <EntityType Name="Page">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Title" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Description" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Keywords" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="PageMedias" Relationship="AzulBodasModel.FK_PageMedia_Page1" FromRole="Page" ToRole="PageMedia" />
+    <NavigationProperty Name="Texts" Relationship="AzulBodasModel.FK_Text_Page" FromRole="Page" ToRole="Text" />
+  </EntityType>
+  <EntityType Name="PageMedia">
+    <Key>
+      <PropertyRef Name="PageId" />
+      <PropertyRef Name="MediaId" />
+      <PropertyRef Name="Order" />
+    </Key>
+    <Property Type="Int32" Name="PageId" Nullable="false" />
+    <Property Type="Int32" Name="MediaId" Nullable="false" />
+    <Property Type="Int32" Name="Order" Nullable="false" />
+    <NavigationProperty Name="Medium" Relationship="AzulBodasModel.FK_PageMedia_Page" FromRole="PageMedia" ToRole="Medium" />
+    <NavigationProperty Name="Page" Relationship="AzulBodasModel.FK_PageMedia_Page1" FromRole="PageMedia" ToRole="Page" />
+  </EntityType>
+  <EntityType Name="StaticText">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Phrase" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Type="String" Name="ValueSpanish" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ValueEnglish" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Text">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="ValueEs" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ValueEn" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="PageId" />
+    <NavigationProperty Name="Page" Relationship="AzulBodasModel.FK_Text_Page" FromRole="Text" ToRole="Page" />
+  </EntityType>
+  <Association Name="FK_PageMedia_Page">
+    <End Type="AzulBodasModel.Media" Role="Medium" Multiplicity="1" />
+    <End Type="AzulBodasModel.PageMedia" Role="PageMedia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Medium">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PageMedia">
+        <PropertyRef Name="MediaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PageMedia_Page1">
+    <End Type="AzulBodasModel.Page" Role="Page" Multiplicity="1" />
+    <End Type="AzulBodasModel.PageMedia" Role="PageMedia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Page">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PageMedia">
+        <PropertyRef Name="PageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Text_Page">
+    <End Type="AzulBodasModel.Page" Role="Page" Multiplicity="0..1" />
+    <End Type="AzulBodasModel.Text" Role="Text" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Page">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Text">
+        <PropertyRef Name="PageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

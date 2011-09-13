@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AzulBodasModelStoreContainer" CdmEntityContainer="AzulBodasEntities">
+    <EntitySetMapping Name="Media1">
+      <EntityTypeMapping TypeName="AzulBodasModel.Media">
+        <MappingFragment StoreEntitySet="Media">
+          <ScalarProperty Name="ThumbnailContentData" ColumnName="ThumbnailContentData" />
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="Width" ColumnName="Width" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="AltTag" ColumnName="AltTag" />
+          <ScalarProperty Name="ContentData" ColumnName="ContentData" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pages">
+      <EntityTypeMapping TypeName="AzulBodasModel.Page">
+        <MappingFragment StoreEntitySet="Page">
+          <ScalarProperty Name="Keywords" ColumnName="Keywords" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PageMedias">
+      <EntityTypeMapping TypeName="AzulBodasModel.PageMedia">
+        <MappingFragment StoreEntitySet="PageMedia">
+          <ScalarProperty Name="Order" ColumnName="Order" />
+          <ScalarProperty Name="MediaId" ColumnName="MediaId" />
+          <ScalarProperty Name="PageId" ColumnName="PageId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StaticTexts">
+      <EntityTypeMapping TypeName="AzulBodasModel.StaticText">
+        <MappingFragment StoreEntitySet="StaticText">
+          <ScalarProperty Name="ValueEnglish" ColumnName="ValueEnglish" />
+          <ScalarProperty Name="ValueSpanish" ColumnName="ValueSpanish" />
+          <ScalarProperty Name="Phrase" ColumnName="Phrase" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Texts">
+      <EntityTypeMapping TypeName="AzulBodasModel.Text">
+        <MappingFragment StoreEntitySet="Text">
+          <ScalarProperty Name="PageId" ColumnName="PageId" />
+          <ScalarProperty Name="ValueEn" ColumnName="ValueEn" />
+          <ScalarProperty Name="ValueEs" ColumnName="ValueEs" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

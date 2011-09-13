@@ -1,0 +1,46 @@
+﻿.img-frame{
+    background:url('images/rounded_frame_opt.png') no-repeat 0 1px;
+    width:457px;
+    height:435px;
+    margin-top:-433px;
+    margin-left:-10px;
+    position:relative;
+}
+    
+.img-frame-home{
+    background:url('images/rounded_frame_home.png')no-repeat 0 1px;
+    position:relative;
+    margin-top:-435px;
+    width:835px;
+    height:435px;
+}
+
+#slides{}
+#slides .pagination {
+	margin:0 auto;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    padding:0 15px 0 0;
+    overflow:hidden;
+}
+
+#slides .pagination li {
+	float:left;
+	margin:0 1px;
+	list-style:none;
+}
+
+#slides .pagination li a {
+	display:block;
+	width:11px;
+	height:0;
+	padding-top:11px;
+	background-image:url("images/slides_dots.png");
+	background-position:0 0;
+	float:left;
+	overflow:hidden;
+}
+
+#slides .pagination li.current a {
+	background-position:0 -12px;
+}

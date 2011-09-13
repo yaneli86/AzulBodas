@@ -1,0 +1,8 @@
+C:\Projects\AzulBodas\AzulBodas.Web\bin\AzulBodas.Web.dll
+C:\Projects\AzulBodas\AzulBodas.Web\bin\AzulBodas.Web.pdb
+C:\Projects\AzulBodas\AzulBodas.Web\bin\AzulBodas.Data.dll
+C:\Projects\AzulBodas\AzulBodas.Web\bin\Telerik.Web.Mvc.dll
+C:\Projects\AzulBodas\AzulBodas.Web\bin\AzulBodas.Data.pdb
+C:\Projects\AzulBodas\AzulBodas.Web\obj\Release\ResolveAssemblyReference.cache
+C:\Projects\AzulBodas\AzulBodas.Web\obj\Release\AzulBodas.Web.dll
+C:\Projects\AzulBodas\AzulBodas.Web\obj\Release\AzulBodas.Web.pdb

@@ -64,8 +64,8 @@ input, select { vertical-align: middle; }
  * Font normalization inspired by YUI Library's fonts.css: developer.yahoo.com/yui/
  */
 
-body { font:13px/1.231 sans-serif; *font-size:small; } /* Hack retained to preserve specificity */
-select, input, textarea, button { font:99% sans-serif; }
+body { font:13px/1.231 sans-serif;font-family: 'Trebuchet MS', sans-serif; *font-size:small; } /* Hack retained to preserve specificity */
+select, input, textarea, button { font:99% sans-serif;font-family: 'Trebuchet MS', sans-serif }
 
 /* Normalize monospace sizing:
    en.wikipedia.org/wiki/MediaWiki_talk:Common.css/Archive_11#Teletype_style_fix_for_Chrome */
@@ -170,15 +170,15 @@ a:hover { color: #036; }
  */
 #wrapper{width:1024px;margin:48px auto 0;}
 #logo{margin:0 auto;width:207px}
-#nav{margin-top:9px;height:45px;}
-#nav ul{overflow:hidden;margin:0}
-#nav li{float:left;list-style:none;margin-left:80px}
+#nav{margin-top:15px;height:auto;}
+#nav ul{overflow:hidden;margin:0 auto; width:839px;}
+#nav li{float:left;list-style:none;margin-left:49px}
 #nav li.first{margin-left:0px}
 #nav-top{background:url('images/nav-top-bg.png') no-repeat 0 0;height:13px}
-#nav-bottom{background:url('images/nav-bottom-bg.png') no-repeat 0 -5px;height:13px}
+#nav-bottom{background:url('images/nav-bottom-bg.png') no-repeat 0;height:13px}
+#footer-line{background:url('images/nav-bottom-bg.png') no-repeat 0;height:13px; margin-top:25px;}
 #main{margin:0 auto}
 #nav a {background: url('images/nav-sprite.png') no-repeat top left; display:block;text-indent:-9999px;margin:10px 0}
-
 
 #nav .sprite-home{ background-position: 0 -198px; width: 53px; height: 15px; } 
 #nav .index .sprite-home{ background-position: 0 -223px; } 
@@ -214,10 +214,31 @@ a:hover { color: #036; }
 #footer li.first{margin-left:0}
 #footer a {background: url('images/social-logos.png') no-repeat top left;display:block;text-indent:-9999px;margin-top:10px}
  
-#footer .sprite-facebook{ background-position: 0 -34px; width: 24px; height: 23px;} 
+#footer .sprite-facebook{ background-position: 0 -34px; width: 24px; height: 24px;} 
 #footer .sprite-facebook:hover{ background-position: -1px -1px; }
-#footer .sprite-twitter{ background-position: 0 -101px; width: 23px; height: 23px; } 
+#footer .sprite-twitter{ background-position: 0 -101px; width: 23px; height: 24px; } 
 #footer .sprite-twitter:hover{ background-position: 0 -68px;} 
+.left{float:left}
+.right{float:right}
+
+h1.heading {background: url('images/nav-sprite.png') no-repeat top left; display:block;text-indent:-9999px;margin:10px 0}
+h1.sprite-home{background-position: 0 -223px}
+h1.sprite-azulbodas{background-position: 0 -25px}
+h1.sprite-islaholbox{background-position: 0 -327px}
+h1.sprite-imagenes{background-position: 0 -277px}
+h1.sprite-eventos{background-position: 0 -174px}
+h1.sprite-bodas{background-position: 0 -75px}
+h1.sprite-contacto{background-position: 0 -125px;}
+
+#page-content{position:relative;font-size:14px;color:#969696;}
+
+.scroll-arrows{margin:0 auto;display:block;background: url(images/scroll-arrows.png) no-repeat top left;text-indent:-9999px}
+.sprite-down{ background-position: 0 0; width: 13px; height: 9px; } 
+.sprite-down:hover{ background-position: 0 -14px; width: 13px; height: 9px; } 
+.sprite-up{ background-position: 0 -28px; width: 12px; height: 9px;margin-bottom:5px } 
+.sprite-up:hover{ background-position: 0 -42px; width: 12px; height: 9px; } 
+.contact-name{color:#1d9fc1; font-size:14px; text-align:center; font-weight: bold;letter-spacing:1px;}
+.contact-position{color:#969696; font-size:13px; text-align:center;font-weight: bold;letter-spacing:1px;}
 
 /**
  * Non-semantic helper classes: please define your styles before this section.

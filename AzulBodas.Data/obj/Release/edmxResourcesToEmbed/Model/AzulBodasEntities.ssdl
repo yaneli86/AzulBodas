@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AzulBodasModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="AzulBodasModelStoreContainer">
+    <EntitySet Name="Media" EntityType="AzulBodasModel.Store.Media" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Page" EntityType="AzulBodasModel.Store.Page" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PageMedia" EntityType="AzulBodasModel.Store.PageMedia" store:Type="Tables" store:Schema="dbo" store:Name="PageMedia">
+      <DefiningQuery>SELECT 
+      [PageMedia].[PageId] AS [PageId], 
+      [PageMedia].[MediaId] AS [MediaId], 
+      [PageMedia].[Order] AS [Order]
+      FROM [dbo].[PageMedia] AS [PageMedia]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="StaticText" EntityType="AzulBodasModel.Store.StaticText" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Text" EntityType="AzulBodasModel.Store.Text" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_PageMedia_Page" Association="AzulBodasModel.Store.FK_PageMedia_Page">
+      <End Role="Media" EntitySet="Media" />
+      <End Role="PageMedia" EntitySet="PageMedia" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PageMedia_Page1" Association="AzulBodasModel.Store.FK_PageMedia_Page1">
+      <End Role="Page" EntitySet="Page" />
+      <End Role="PageMedia" EntitySet="PageMedia" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Text_Page" Association="AzulBodasModel.Store.FK_Text_Page">
+      <End Role="Page" EntitySet="Page" />
+      <End Role="Text" EntitySet="Text" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Media">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ContentData" Type="varbinary(max)" Nullable="false" />
+    <Property Name="AltTag" Type="nvarchar" MaxLength="50" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" />
+    <Property Name="Width" Type="int" Nullable="false" />
+    <Property Name="Height" Type="int" Nullable="false" />
+    <Property Name="ThumbnailContentData" Type="varbinary(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Page">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="150" />
+    <Property Name="Keywords" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'AzulBodas.dbo.PageMedia' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="PageMedia">
+    <Key>
+      <PropertyRef Name="PageId" />
+      <PropertyRef Name="MediaId" />
+      <PropertyRef Name="Order" />
+    </Key>
+    <Property Name="PageId" Type="int" Nullable="false" />
+    <Property Name="MediaId" Type="int" Nullable="false" />
+    <Property Name="Order" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StaticText">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Phrase" Type="nchar" Nullable="false" MaxLength="50" />
+    <Property Name="ValueSpanish" Type="nvarchar" MaxLength="250" />
+    <Property Name="ValueEnglish" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Text">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ValueEs" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ValueEn" Type="nvarchar(max)" />
+    <Property Name="PageId" Type="int" />
+  </EntityType>
+  <Association Name="FK_PageMedia_Page">
+    <End Role="Media" Type="AzulBodasModel.Store.Media" Multiplicity="1" />
+    <End Role="PageMedia" Type="AzulBodasModel.Store.PageMedia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Media">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PageMedia">
+        <PropertyRef Name="MediaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PageMedia_Page1">
+    <End Role="Page" Type="AzulBodasModel.Store.Page" Multiplicity="1" />
+    <End Role="PageMedia" Type="AzulBodasModel.Store.PageMedia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Page">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PageMedia">
+        <PropertyRef Name="PageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Text_Page">
+    <End Role="Page" Type="AzulBodasModel.Store.Page" Multiplicity="0..1" />
+    <End Role="Text" Type="AzulBodasModel.Store.Text" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Page">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Text">
+        <PropertyRef Name="PageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

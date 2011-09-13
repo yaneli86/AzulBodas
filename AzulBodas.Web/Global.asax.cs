@@ -24,6 +24,12 @@ namespace AzulBodas.Web
             ).RouteHandler = new SingleCultureMvcRouteHandler();
 
             routes.MapRoute(
+                "Admin",
+                "Admin/{action}/{id}",
+                new { controller = "Admin", action = "Index", id = UrlParameter.Optional }
+            ).RouteHandler = new SingleCultureMvcRouteHandler();
+
+            routes.MapRoute(
                 "Default", // Route name
                 "{controller}/{action}/{id}", // URL with parameters
                 new { controller = "Home", action = "Languages", id = UrlParameter.Optional } // Parameter defaults

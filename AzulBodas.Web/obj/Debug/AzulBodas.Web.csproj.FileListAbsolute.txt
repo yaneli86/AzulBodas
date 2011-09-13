@@ -5,3 +5,4 @@ c:\Projects\AzulBodas\AzulBodas.Web\obj\Debug\AzulBodas.Web.dll
 c:\Projects\AzulBodas\AzulBodas.Web\obj\Debug\AzulBodas.Web.pdb
 c:\Projects\AzulBodas\AzulBodas.Web\bin\AzulBodas.Data.dll
 c:\Projects\AzulBodas\AzulBodas.Web\bin\AzulBodas.Data.pdb
+C:\Projects\AzulBodas\AzulBodas.Web\bin\Telerik.Web.Mvc.dll
