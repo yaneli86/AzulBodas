@@ -106,26 +106,38 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\images\home_image1.jpg" />
-    <Content Include="Content\images\home_image2.jpg" />
-    <Content Include="Content\images\home_image3.jpg" />
-    <Content Include="Content\images\home_image4.jpg" />
-    <Content Include="Content\images\home_image5.jpg" />
-    <Content Include="Content\images\home_image6.jpg" />
-    <Content Include="Content\images\content-home-image.png" />
     <Content Include="Content\images\languages.png" />
     <Content Include="Content\images\loading.gif" />
     <Content Include="Content\images\logo-plain-shadow.png" />
     <Content Include="Content\images\logo-plain.png" />
+    <Content Include="Content\images\logo.png" />
+    <Content Include="Content\images\marco recuadro de banner.png" />
+    <Content Include="Content\images\nav-bottom-bg.png" />
     <Content Include="Content\images\nav-sprite.png" />
     <Content Include="Content\images\nav-top-bg.png" />
-    <Content Include="Content\images\nav-bottom-bg.png" />
-    <Content Include="Content\images\logo.png" />
+    <Content Include="Content\images\rounded_frame_home.png" />
     <Content Include="Content\images\rounded_frame_opt.png" />
+    <Content Include="Content\images\scroll-arrows.png" />
     <Content Include="Content\images\slides_dots.png" />
     <Content Include="Content\images\social-logos.png" />
-    <Content Include="Content\images\square_pic.jpg" />
-    <Content Include="Content\images\square_pic2.jpg" />
+    <Content Include="Content\repository\1.jpg" />
+    <Content Include="Content\repository\10.jpg" />
+    <Content Include="Content\repository\2.jpg" />
+    <Content Include="Content\repository\3.jpg" />
+    <Content Include="Content\repository\4.jpg" />
+    <Content Include="Content\repository\5.jpg" />
+    <Content Include="Content\repository\6.jpg" />
+    <Content Include="Content\repository\7.jpg" />
+    <Content Include="Content\repository\8.jpg" />
+    <Content Include="Content\repository\9.jpg" />
+    <Content Include="Content\repository\cecilia.png" />
+    <Content Include="Content\repository\image1.jpg" />
+    <Content Include="Content\repository\image2.jpg" />
+    <Content Include="Content\repository\image3.jpg" />
+    <Content Include="Content\repository\image4.jpg" />
+    <Content Include="Content\repository\image5.jpg" />
+    <Content Include="Content\repository\image6.jpg" />
+    <Content Include="Content\repository\preci.png" />
     <Content Include="Content\slides.css" />
     <Content Include="Content\telerik.common.css" />
     <Content Include="Content\telerik.vista.css" />
@@ -222,7 +234,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
     <Content Include="Views\Shared\Admin.Master" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
