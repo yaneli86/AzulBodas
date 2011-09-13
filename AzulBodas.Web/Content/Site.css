@@ -237,9 +237,10 @@ h1.sprite-contacto{background-position: 0 -125px;}
 .sprite-down:hover{ background-position: 0 -14px; width: 13px; height: 9px; } 
 .sprite-up{ background-position: 0 -28px; width: 12px; height: 9px;margin-bottom:5px } 
 .sprite-up:hover{ background-position: 0 -42px; width: 12px; height: 9px; } 
-.contact-name{color:#1d9fc1; font-size:14px; text-align:center; font-weight: bold;letter-spacing:1px;}
-.contact-position{color:#969696; font-size:13px; text-align:center;font-weight: bold;letter-spacing:1px;}
-
+.contact-name{color:#1d9fc1; font-size:15px; text-align:center; font-weight: bold;letter-spacing:1px;}
+.contact-position{color:#969696; font-size:14px; text-align:center;letter-spacing:1px;}
+.contact-title{color:#1d9fc1; font-size:15px; text-align:right; font-weight: bold;letter-spacing:1px;}
+.contact-standard{color:#969696; font-size:14px; text-align:left; font-weight: bold;}
 /**
  * Non-semantic helper classes: please define your styles before this section.
  */
