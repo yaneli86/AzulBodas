@@ -1,8 +1,12 @@
 ﻿$(function () {
     $("#scrollDown").bind("click", function (e) {
         e.preventDefault();
-        var content = $("#page-content");
-        var currentPos = parseInt(content.css("top").match(/-?\d+/), 10);
+        var content = $("#page-content"),
+            top = content.css("top");
+        if (top == "auto") {
+            top = "0px";
+        }
+        var currentPos = parseInt(top.match(/-?\d+/), 10);
         var elemHeight = content.height();
         var parentHeight = content.parent().height();
         if (Math.abs(currentPos) + parentHeight < elemHeight) {
