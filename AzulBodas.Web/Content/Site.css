@@ -212,7 +212,7 @@ a:hover { color: #036; }
 #footer ul{margin:0;overflow:hidden}
 #footer li{float:left;list-style:none;margin-left:10px}
 #footer li.first{margin-left:0}
-#footer a {background: url('images/social-logos.png') no-repeat top left;display:block;text-indent:-9999px;margin-top:10px}
+#footer a {background: url('images/social-logos.png') no-repeat top left;display:block;text-indent:-9999px;margin-top:5px}
  
 #footer .sprite-facebook{ background-position: 0 -34px; width: 24px; height: 24px;} 
 #footer .sprite-facebook:hover{ background-position: -1px -1px; }
@@ -252,7 +252,7 @@ h1.sprite-contacto{background-position: 0 -125px;}
 .contact-name{color:#1d9fc1; font-size:15px; text-align:center; font-weight: bold;letter-spacing:1px;}
 .contact-position{color:#969696; font-size:14px; text-align:center;letter-spacing:1px;}
 .contact-title{color:#1d9fc1; font-size:15px; text-align:right; font-weight: bold;letter-spacing:1px;}
-.contact-standard{color:#969696; font-size:14px; text-align:left; font-weight: bold;}
+.contact-standard{color:#969696; font-size:14px; text-align:left;}
 /**
  * Non-semantic helper classes: please define your styles before this section.
  */
