@@ -131,11 +131,11 @@ input:invalid, textarea:invalid {
 /* These selection declarations have to be separate
    No text-shadow: twitter.com/miketaylr/status/12228805301
    Also: hot pink! */
-::-moz-selection{ background: #FF5E99; color:#fff; text-shadow: none; }
-::selection { background:#FF5E99; color:#fff; text-shadow: none; }
+::-moz-selection{ background: #1D9FC1; color:#fff; text-shadow: none; }
+::selection { background:#1D9FC1; color:#fff; text-shadow: none; }
 
 /* j.mp/webkit-tap-highlight-color */
-a:link { -webkit-tap-highlight-color: #FF5E99; }
+a:link { -webkit-tap-highlight-color: #1D9FC1; }
 
 /* Make buttons play nice in IE:
    www.viget.com/inspire/styling-the-button-element-in-internet-explorer/ */
@@ -229,6 +229,12 @@ h1.sprite-imagenes{background-position: 0 -277px}
 h1.sprite-eventos{background-position: 0 -174px}
 h1.sprite-bodas{background-position: 0 -75px}
 h1.sprite-contacto{background-position: 0 -125px;}
+
+#submenu h1{cursor:pointer;}
+#submenu h1.sprite-imagenes{background-position: 0 -250px;}
+#submenu h1.sprite-imagenes:hover{background-position: 0 -277px;}
+#submenu h1.sprite-videos{background-position: 0 -250px;}
+#submenu h1.sprite-videos:hover{background-position: 0 -277px;}
 
 #page-content{position:relative;font-size:14px;color:#969696;}
 

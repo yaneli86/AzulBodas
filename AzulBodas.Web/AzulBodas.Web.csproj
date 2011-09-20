@@ -97,6 +97,7 @@
     <Compile Include="Models\BodasModel.cs" />
     <Compile Include="Models\ContactoModel.cs" />
     <Compile Include="Models\EventosModel.cs" />
+    <Compile Include="Models\GalleryModel.cs" />
     <Compile Include="Models\IslaHolboxModel.cs" />
     <Compile Include="Models\HomeModel.cs" />
     <Compile Include="Models\PageModel.cs" />
@@ -148,6 +149,7 @@
     <Content Include="Content\Vista\slider-v.gif" />
     <Content Include="Content\Vista\sprite-vertical.png" />
     <Content Include="Content\Vista\sprite.png" />
+    <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\components.js" />
     <Content Include="Scripts\dd_belatedpng.js" />
@@ -202,6 +204,7 @@
     <Content Include="Views\Home\AzulBodas.aspx" />
     <Content Include="Views\Home\Contacto.aspx" />
     <Content Include="Views\Home\Eventos.aspx" />
+    <Content Include="Views\Home\Imagenes.aspx" />
     <Content Include="Views\Home\IslaHolbox.aspx" />
     <Content Include="Views\Home\Languages.aspx" />
     <Content Include="Views\Home\Slides.ascx" />

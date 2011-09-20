@@ -52,6 +52,18 @@ namespace AzulBodas.Web.Controllers
             return View(model);
         }
 
+        public ActionResult Imagenes()
+        {
+            GalleryModel model = new GalleryModel
+            {
+                Title = "Galería de Imágenes",
+                Keywords = "",
+                Description = "",
+                Images = new List<string> { "1.jpg", "2.jpg", "3.jpg", "4.jpg" }
+            };
+            return View(model);
+        }
+
         public ActionResult Eventos()
         {
             EventosModel model = new EventosModel
