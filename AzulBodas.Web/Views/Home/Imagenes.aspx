@@ -8,13 +8,7 @@
     <div>
         <div class="left" style="width:320px;height:435px">
             <div id="submenu">
-                <div style="float:left">
-                    <h1 class="heading sprite-imagenes" style="width:80px">ISLA HOLBOX</h1>
-                </div>
-                <div style="float:left;margin-left:10px">
-                     <h1 class="heading sprite-imagenes" style="width:80px">Videos</h1>
-                </div>
-                <div style="clear:both"></div>
+                <% Html.RenderPartial("SubMenuNavigation", "imagenes"); %>
             </div>
             <div id="thumbs">
             

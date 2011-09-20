@@ -230,15 +230,21 @@ h1.sprite-eventos{background-position: 0 -174px}
 h1.sprite-bodas{background-position: 0 -75px}
 h1.sprite-contacto{background-position: 0 -125px;}
 
-#submenu h1{cursor:pointer;}
-#submenu h1.sprite-imagenes{background-position: 0 -250px;}
-#submenu h1.sprite-imagenes:hover{background-position: 0 -277px;}
-#submenu h1.sprite-videos{background-position: 0 -250px;}
-#submenu h1.sprite-videos:hover{background-position: 0 -277px;}
+#submenu a {background: url('images/submenu.png') no-repeat top left; display:block;text-indent:-9999px;margin:10px 0}
+#submenu li{float:left;list-style:none;}
+
+#submenu .sprite-fotos{background-position: 0 -69px; width: 66px; height: 19px; } 
+#submenu .imagenes .sprite-fotos{ background-position: 0 0; width: 66px; height: 19px;} 
+#submenu .sprite-fotos:hover{ background-position: 0 0; width: 66px; height: 19px; } 
+
+#submenu .sprite-videos{  background-position: 0 -207px; width: 66px; height: 19px;} 
+#submenu .videos .sprite-fotos{ background-position: 0 -138px; width: 66px; height: 19px;} 
+#submenu .sprite-videos:hover{ background-position: 0 -138px; width: 66px; height: 19px; } 
+
 
 #page-content{position:relative;font-size:14px;color:#969696;}
 
-.scroll-arrows{margin:0 auto;display:block;background: url(images/scroll-arrows.png) no-repeat top left;text-indent:-9999px}
+.scroll-arrows{margin:0 auto;display:block;background: url(images/submenu.png) no-repeat top left;}
 .sprite-down{ background-position: 0 0; width: 13px; height: 9px; } 
 .sprite-down:hover{ background-position: 0 -14px; width: 13px; height: 9px; } 
 .sprite-up{ background-position: 0 -28px; width: 12px; height: 9px;margin-bottom:5px } 

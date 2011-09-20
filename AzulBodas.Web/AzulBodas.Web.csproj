@@ -208,6 +208,7 @@
     <Content Include="Views\Home\IslaHolbox.aspx" />
     <Content Include="Views\Home\Languages.aspx" />
     <Content Include="Views\Home\Slides.ascx" />
+    <Content Include="Views\Shared\SubMenuNavigation.ascx" />
     <Content Include="Views\Shared\ScrollablePanel.ascx" />
     <Content Include="Views\Shared\WebsiteNavigation.ascx" />
     <Content Include="Web.config" />
