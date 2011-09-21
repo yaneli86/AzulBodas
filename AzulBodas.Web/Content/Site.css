@@ -168,7 +168,7 @@ a:hover { color: #036; }
  *
  * Author: 
  */
-#wrapper{width:1024px;margin:48px auto 0;}
+#wrapper{width:1024px;margin:40px auto 0;}
 #logo{margin:0 auto;width:207px}
 #nav{margin-top:15px;height:auto;}
 #nav ul{overflow:hidden;margin:0 auto; width:839px;}

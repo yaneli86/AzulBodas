@@ -15,6 +15,22 @@
     height:435px;
 }
 
+.img-frame-images{
+    background:url('images/rounded_frame_images.png') no-repeat 0 1px;
+    width:605px;
+    height:449px;
+    margin-top:-431px;
+    position:relative;
+}
+
+.img-frame-thumb{
+    background:url('images/rounded_frame_thumbnails.png') no-repeat 0 1px;
+    width:51px;
+    height:49px;
+    margin-top:-49px;
+    position:relative;
+}
+
 #slides{}
 #slides .pagination {
 	margin:0 auto;

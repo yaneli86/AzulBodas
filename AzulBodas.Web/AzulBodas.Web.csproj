@@ -90,8 +90,10 @@
     </Compile>
     <Compile Include="Helpers\CultureConstraint.cs" />
     <Compile Include="Helpers\HtmlHelpers.cs" />
+    <Compile Include="Helpers\ImageHelper.cs" />
     <Compile Include="Helpers\MultiCultureMvcRouteHandler.cs" />
     <Compile Include="Helpers\SingleCultureMvcRouteHandler.cs" />
+    <Compile Include="Helpers\ThumbHandler.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\AzulBodasModel.cs" />
     <Compile Include="Models\BodasModel.cs" />
@@ -117,10 +119,13 @@
     <Content Include="Content\images\nav-sprite.png" />
     <Content Include="Content\images\nav-top-bg.png" />
     <Content Include="Content\images\rounded_frame_home.png" />
+    <Content Include="Content\images\rounded_frame_images.png" />
     <Content Include="Content\images\rounded_frame_opt.png" />
+    <Content Include="Content\images\rounded_frame_thumbnails.png" />
     <Content Include="Content\images\scroll-arrows.png" />
     <Content Include="Content\images\slides_dots.png" />
     <Content Include="Content\images\social-logos.png" />
+    <Content Include="Content\images\submenu.png" />
     <Content Include="Content\repository\1.jpg" />
     <Content Include="Content\repository\10.jpg" />
     <Content Include="Content\repository\2.jpg" />
@@ -230,6 +235,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\thumbs\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AzulBodas.Data\AzulBodas.Data.csproj">

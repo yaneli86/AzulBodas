@@ -59,7 +59,7 @@ namespace AzulBodas.Web.Controllers
                 Title = "Galería de Imágenes",
                 Keywords = "",
                 Description = "",
-                Images = new List<string> { "1.jpg", "2.jpg", "3.jpg", "4.jpg" }
+                Images = new List<string> { "gallery-1.jpg", "gallery-2.jpg", "gallery-3.jpg", "gallery-4.jpg", "gallery-5.jpg" }
             };
             return View(model);
         }

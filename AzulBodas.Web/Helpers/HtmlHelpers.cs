@@ -6,14 +6,13 @@ using System.Web.Mvc;
 using System.Web.Mvc.Html;
 namespace AzulBodas.Web.Helpers
 {
-    /*
     public static class HtmlHelpers
     {
-        public static MvcHtmlString ActionLinkCul(this HtmlHelper helper, string linkText, string actionName)
+        public static HtmlString ThumbUrl(this HtmlHelper helper, string filename)
         {
-            MvcHtmlString link = helper.ActionLink(linkText, actionName);
-            String.Concat(link.ToString()
+            UrlHelper urlHelper = new UrlHelper(helper.ViewContext.RequestContext);
+            return new HtmlString(urlHelper.Content("~/Thumb/" + filename));
         }
     }
-     */
+
 }

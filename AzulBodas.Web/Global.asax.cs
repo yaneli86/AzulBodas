@@ -18,6 +18,13 @@ namespace AzulBodas.Web
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
             routes.IgnoreRoute("favicon.ico");
 
+            routes.MapRoute("Thumb", "Thumb/{file}.{ext}").RouteHandler = new ThumbRouteHandler();
+
+            //routes.Add(new Route
+            //(
+            //     "Thumb/{action}", new ThumbRouteHandler()
+            //));
+
             routes.MapRoute(
                 "ChangeCulture",
                 "Home/ChangeCulture/{lang}",
@@ -43,7 +50,7 @@ namespace AzulBodas.Web
         {
             foreach (Route r in routes)
             {
-                if (!(r.RouteHandler is SingleCultureMvcRouteHandler))
+                if (!(r.RouteHandler is SingleCultureMvcRouteHandler) && !(r.RouteHandler is ThumbRouteHandler))
                 {
                     r.RouteHandler = new MultiCultureMvcRouteHandler();
                     r.Url = "{culture}/" + r.Url;
@@ -66,6 +73,8 @@ namespace AzulBodas.Web
             AreaRegistration.RegisterAllAreas();
 
             RegisterRoutes(RouteTable.Routes);
+            
+            
         }
     }
 }
