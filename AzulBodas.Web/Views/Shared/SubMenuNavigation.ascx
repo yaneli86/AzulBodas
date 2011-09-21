@@ -4,7 +4,7 @@
          <a href='<%= Url.Action("Imagenes", "Home") %>' class="sprite-fotos">Fotos</a>
     </li>
     <li style=" margin-left:7px">
-        <a href='<%= Url.Action("Videos", "Home") %>' class="sprite-videos">Videos</a>
+        <a href='<%= Url.Action("Imagenes", "Home") %>' class="sprite-videos">Videos</a>
     </li>
 
 </ul>
