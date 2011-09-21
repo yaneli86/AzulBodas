@@ -137,6 +137,11 @@
     <Content Include="Content\repository\8.jpg" />
     <Content Include="Content\repository\9.jpg" />
     <Content Include="Content\repository\cecilia.png" />
+    <Content Include="Content\repository\gallery-1.jpg" />
+    <Content Include="Content\repository\gallery-2.jpg" />
+    <Content Include="Content\repository\gallery-3.jpg" />
+    <Content Include="Content\repository\gallery-4.jpg" />
+    <Content Include="Content\repository\gallery-5.jpg" />
     <Content Include="Content\repository\image1.jpg" />
     <Content Include="Content\repository\image2.jpg" />
     <Content Include="Content\repository\image3.jpg" />
@@ -147,6 +152,11 @@
     <Content Include="Content\slides.css" />
     <Content Include="Content\telerik.common.css" />
     <Content Include="Content\telerik.vista.css" />
+    <Content Include="Content\thumbs\gallery-1.jpg" />
+    <Content Include="Content\thumbs\gallery-2.jpg" />
+    <Content Include="Content\thumbs\gallery-3.jpg" />
+    <Content Include="Content\thumbs\gallery-4.jpg" />
+    <Content Include="Content\thumbs\gallery-5.jpg" />
     <Content Include="Content\Vista\editor.png" />
     <Content Include="Content\Vista\imagebrowser.png" />
     <Content Include="Content\Vista\loading.gif" />
@@ -235,7 +245,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\thumbs\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AzulBodas.Data\AzulBodas.Data.csproj">
