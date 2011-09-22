@@ -168,7 +168,7 @@ a:hover { color: #036; }
  *
  * Author: 
  */
-#wrapper{width:1024px;margin:40px auto 0;}
+#wrapper{width:1024px;margin:30px auto 0;}
 #logo{margin:0 auto;width:207px}
 #nav{margin-top:15px;height:auto;}
 #nav ul{overflow:hidden;margin:0 auto; width:839px;}
@@ -244,7 +244,7 @@ h1.sprite-contacto{background-position: 0 -125px;}
 
 #page-content{position:relative;font-size:14px;color:#969696;}
 
-.scroll-arrows{margin:0 auto;display:block;background: url(images/submenu.png) no-repeat top left;}
+.scroll-arrows{margin:0 auto;display:block;background: url(images/scroll-arrows.png) no-repeat top left;text-indent:-9999px}
 .sprite-down{ background-position: 0 0; width: 13px; height: 9px; } 
 .sprite-down:hover{ background-position: 0 -14px; width: 13px; height: 9px; } 
 .sprite-up{ background-position: 0 -28px; width: 12px; height: 9px;margin-bottom:5px } 
