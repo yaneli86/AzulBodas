@@ -109,6 +109,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\images\langs.png" />
     <Content Include="Content\images\languages.png" />
     <Content Include="Content\images\loading.gif" />
     <Content Include="Content\images\logo-plain-shadow.png" />

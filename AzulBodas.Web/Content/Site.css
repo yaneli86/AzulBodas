@@ -170,7 +170,7 @@ a:hover { color: #036; }
  */
 #wrapper{width:1024px;margin:30px auto 0;}
 #logo{margin:0 auto;width:207px}
-#nav{margin-top:15px;height:auto;}
+#nav{height:auto;}
 #nav ul{overflow:hidden;margin:0 auto; width:839px;}
 #nav li{float:left;list-style:none;margin-left:49px}
 #nav li.first{margin-left:0px}
@@ -253,6 +253,13 @@ h1.sprite-contacto{background-position: 0 -125px;}
 .contact-position{color:#969696; font-size:14px; text-align:center;letter-spacing:1px;}
 .contact-title{color:#1d9fc1; font-size:15px; text-align:right; font-weight: bold;letter-spacing:1px;}
 .contact-standard{color:#969696; font-size:14px; text-align:left;}
+
+.lang{background: url(images/langs.png) no-repeat top left;/*padding:1px 30px*/display:inline-block}
+.sprite-english{ background-position: 0 -28px; width: 47px; height: 18px; } 
+.sprite-english:hover{ background-position: 0 0; width: 47px; height: 18px; } 
+.sprite-espanol{ background-position: 0 -84px; width: 47px; height: 18px; } 
+.sprite-espanol:hover{ background-position: 0 -56px; width: 47px; height: 18px; }
+
 /**
  * Non-semantic helper classes: please define your styles before this section.
  */

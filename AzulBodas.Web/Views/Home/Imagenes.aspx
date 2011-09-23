@@ -26,7 +26,7 @@
         </div>
         <div class="right" style="margin-top:10px">
             <div class="slide">
-			    <img  id="viewer" src="<%= Url.Content("~/Content/repository/" + "gallery-1.jpg") %>" alt="pic"/>
+			    <img  id="viewer" src="<%= Url.Content("~/Content/repository/" + "gallery-1.jpg") %>" alt="pic"  width="605px" height="426px"/>
                 <div class="img-frame-images"></div>
 		    </div>
         </div>

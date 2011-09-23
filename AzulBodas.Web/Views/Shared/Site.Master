@@ -26,6 +26,9 @@
                 <img src='<%= Url.Content("~/Content/images/logo.png") %>' alt="logo" width="207px" height="119px" />
             </a>
         </div>
+        <div style="text-align:right;margin-top:-15px;width:930px">
+            <%= Html.ChangeLanguage() %>
+        </div>
         <div id="nav">
             <div id="nav-top"></div>
             <div id="nav-lnks">
